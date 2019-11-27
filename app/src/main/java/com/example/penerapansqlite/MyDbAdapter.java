@@ -9,7 +9,7 @@ public class MyDbAdapter {
     private MyDbHelper myDbHelper;
 
     public MyDbAdapter (Context context){
-        myDbHelper = new MyDbHelper (context);
+        myDbHelper = new MyDbHelper(context);
     }
 
     public long insertData (String name, String pass){
@@ -30,9 +30,9 @@ public class MyDbAdapter {
         StringBuffer buffer = new StringBuffer();
         while (cursor.moveToNext())
         {
-            int cid = cursor.getInt(cursor.getInt(cursor.getColumnIndex(myDbHelper.UID));
-            String name = cursor.getInt(cursor.getString(cursor.getColumnIndex(myDbHelper.NAME));
-            String password = cursor.getInt(cursor.getString(cursor.getColumnIndex(myDbHelper.MyPASSWORD));
+            int cid = cursor.getInt(cursor.getColumnIndex(myDbHelper.UID));
+            String name = cursor.getString(cursor.getColumnIndex(myDbHelper.NAME));
+            String password = cursor.getString(cursor.getColumnIndex(myDbHelper.MyPASSWORD));
             buffer.append(cid + " " + name + " " + password + "\n");
         }
         return buffer.toString();
